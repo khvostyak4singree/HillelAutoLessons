@@ -3,13 +3,17 @@
  */
 
 import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import MyCode.Code;
+import MyCode.Validator;
 
 public class Tests {
+
+    Validator myValidator;
 
     @DataProvider(name = "TestData")
     public Object[][] createData(){
@@ -21,15 +25,27 @@ public class Tests {
         };
     }
 
-    @Test(dataProvider = "TestData")
-    public static void Positive(String testString, Boolean expectedResult){
+    @BeforeTest
+    void setUp(){
+        System.out.println("Created Object");
+         myValidator = new Validator();
+    }
+
+    @Test(dataProvider = "TestData", description = "Test for Numbers Validation")
+    void Positive(String testString, Boolean expectedResult){
         System.out.println(testString);
-        Assert.assertEquals( (Boolean) Code.isNumberBetween(testString), expectedResult,"Bad input " + testString);
+        Assert.assertEquals( (Boolean) myValidator.numbers(testString), expectedResult,"Bad input " + testString);
+    }
+
+    @AfterMethod
+    void afterM(ITestResult testResult){
+        System.out.println(testResult.isSuccess());
+        System.out.println(testResult.getMethod().getDescription());
     }
 
 //    @Parameters({"input"})
 //    @Test
 //    public static void Negative(String testString){
 //        System.out.println(testString);
-//        Assert.assertFalse(Code.isNumberBetween(testString), "Bad input " + testString);    }
+//        Assert.assertFalse(Validator.isNumberBetween(testString), "Bad input " + testString);    }
 }
