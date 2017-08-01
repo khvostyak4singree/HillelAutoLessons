@@ -7,6 +7,9 @@
                 <include name="positive"/>
             </run>
         </groups>
+        <classes>
+            <class name="GoogleUI"/>
+        </classes>
 
     </test>
 
@@ -16,5 +19,8 @@
                 <include name="negative"/>
             </run>
         </groups>
+        <classes>
+            <class name="GoogleUI"/>
+        </classes>
     </test>
 </suite>
