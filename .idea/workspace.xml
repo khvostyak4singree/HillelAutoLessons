@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92e1af49-0e67-4ab7-9dc5-57e18189d5f8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/GoogleUI.class" afterPath="$PROJECT_DIR$/target/test-classes/GoogleUI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/testNG.xml" afterPath="$PROJECT_DIR$/resources/testNG.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -32,7 +29,7 @@
       <file leaf-file-name="GoogleUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/GoogleUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="736">
+            <state relative-caret-position="73">
               <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -45,8 +42,8 @@
       <file leaf-file-name="testNG.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/testNG.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+            <state relative-caret-position="68">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -530,12 +527,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GoogleUI - 2017.07.14 at 20h 48m 10s.xml">
-      <configuration name="GoogleUI" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="GoogleUI - 2017.07.14 at 20h 50m 10s.xml">
-      <configuration name="GoogleUI" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="GoogleUI - 2017.07.18 at 19h 29m 29s.xml">
       <configuration name="GoogleUI" configurationId="TestNG" />
     </history-entry>
@@ -558,6 +549,12 @@
       <configuration name="GoogleUI.BadLoginSecondStep" configurationId="TestNG" />
     </history-entry>
     <history-entry file="_home_hillel_IdeaProjects_FirstWD_resources_testNG_xml - 2017.08.01 at 18h 48m 58s.xml">
+      <configuration name="/home/hillel/IdeaProjects/FirstWD/resources/testNG.xml" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="_home_hillel_IdeaProjects_FirstWD_resources_testNG_xml - 2017.08.01 at 18h 50m 08s.xml">
+      <configuration name="/home/hillel/IdeaProjects/FirstWD/resources/testNG.xml" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="_home_hillel_IdeaProjects_FirstWD_resources_testNG_xml - 2017.08.01 at 18h 50m 41s.xml">
       <configuration name="/home/hillel/IdeaProjects/FirstWD/resources/testNG.xml" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -765,7 +762,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/GoogleUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
+        <state relative-caret-position="73">
           <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -776,8 +773,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/testNG.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>

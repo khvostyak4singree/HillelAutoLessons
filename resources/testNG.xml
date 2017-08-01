@@ -2,25 +2,9 @@
 
 <suite name="Suite1" verbose="1" >
     <test name="Positive" >
-        <groups>
-            <run>
-                <include name="positive"/>
-            </run>
-        </groups>
         <classes>
             <class name="GoogleUI"/>
         </classes>
 
-    </test>
-
-    <test name="Negative">
-        <groups>
-            <run>
-                <include name="negative"/>
-            </run>
-        </groups>
-        <classes>
-            <class name="GoogleUI"/>
-        </classes>
     </test>
 </suite>
