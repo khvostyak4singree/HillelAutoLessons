@@ -15,6 +15,7 @@ public class ChromeConfig {
         System.setProperty("webdriver.chrome.driver","bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.setBinary("/usr/bin/google-chrome");
+        options.addArguments("--no-sandbox");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
