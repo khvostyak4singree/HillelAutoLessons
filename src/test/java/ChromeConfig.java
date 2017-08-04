@@ -23,7 +23,7 @@ public class ChromeConfig {
         //driver = new ChromeDriver(options);
 
         driver = new RemoteWebDriver(
-                                new URL("http://192.168.3.255:9505/"), 
+                                new URL("http://192.168.3.255:9515/"), 
                                 DesiredCapabilities.chrome());
 
         driver.manage().window().maximize();
