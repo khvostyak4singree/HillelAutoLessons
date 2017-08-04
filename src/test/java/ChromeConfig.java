@@ -23,7 +23,7 @@ public class ChromeConfig {
         System.setProperty("webdriver.chrome.driver","bin/chromedriver");
         
         Runtime rt = Runtime.getRuntime();
-        Process proc = rt.exec("export DISPLAY=:0; whoami");
+        Process proc = rt.exec("/etc/myShit.sh");
         proc.waitFor();
         StringBuffer output = new StringBuffer();
         BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
