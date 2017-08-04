@@ -34,8 +34,8 @@ public class ChromeConfig {
         System.out.println("### " + output);
 
         ChromeOptions options = new ChromeOptions();
-        //options.setBinary("/usr/bin/google-chrome");
-        //options.addArguments("--no-sandbox");
+        options.setBinary("/usr/bin/google-chrome");
+        options.addArguments("--no-sandbox");
         driver = new ChromeDriver(options);
 
         // driver = new RemoteWebDriver(
