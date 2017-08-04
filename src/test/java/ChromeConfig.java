@@ -23,7 +23,7 @@ public class ChromeConfig {
         System.setProperty("webdriver.chrome.driver","bin/chromedriver");
         
         Runtime rt = Runtime.getRuntime();
-        Process proc = rt.exec("/etc/myShit.sh");
+        Process proc = rt.exec("/home/rvalek/myShit.sh");
         proc.waitFor();
         StringBuffer output = new StringBuffer();
         BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
