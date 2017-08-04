@@ -16,6 +16,7 @@ public class ChromeConfig {
         ChromeOptions options = new ChromeOptions();
         //options.setBinary("/usr/bin/google-chrome");
         options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
