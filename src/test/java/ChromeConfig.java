@@ -4,9 +4,13 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class ChromeConfig {
+import java.util.concurrent.TimeUnit;
+import java.net.URL;
+
+public class ChromeConfig throws Exception {
 
     protected WebDriver driver;
 
@@ -14,10 +18,14 @@ public class ChromeConfig {
     protected void startChrome(){
         System.setProperty("webdriver.chrome.driver","bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
-        options.setBinary("/usr/bin/google-chrome");
+        //options.setBinary("/usr/bin/google-chrome");
         options.addArguments("--no-sandbox");
-        //options.addArguments("--headless");
-        driver = new ChromeDriver(options);
+        //driver = new ChromeDriver(options);
+
+        WebDriver driver = new RemoteWebDriver(
+                                new URL("http://localhost:9505/"), 
+                                DesiredCapabilities.chrome());
+
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
