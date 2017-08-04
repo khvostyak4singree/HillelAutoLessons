@@ -15,7 +15,7 @@ public class ChromeConfig {
         System.setProperty("webdriver.chrome.driver","bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
         //options.setBinary("/usr/bin/google-chrome");
-        options.addArguments("--no-sandbox");
+        //options.addArguments("--no-sandbox");
         //options.addArguments("--headless");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
