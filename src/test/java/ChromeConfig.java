@@ -9,6 +9,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.concurrent.TimeUnit;
 import java.net.URL;
+import java.lang.Runtime;
+
 
 public class ChromeConfig {
 
@@ -17,14 +19,26 @@ public class ChromeConfig {
     @BeforeTest
     protected void startChrome()  throws Exception {
         System.setProperty("webdriver.chrome.driver","bin/chromedriver");
+        
+        Runtime rt = Runtime.getRuntime();
+        Process proc = rt.exec("export DISPLAY=:0; whoami");
+        proc.waitFor();
+        StringBuffer output = new StringBuffer();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+        String line = "";                       
+        while ((line = reader.readLine())!= null) {
+                output.append(line + "\n");
+        }
+        System.out.println("### " + output);
+
         ChromeOptions options = new ChromeOptions();
         //options.setBinary("/usr/bin/google-chrome");
         //options.addArguments("--no-sandbox");
-        //driver = new ChromeDriver(options);
+        driver = new ChromeDriver(options);
 
-        driver = new RemoteWebDriver(
-                                new URL("http://192.168.3.225:9515/"), 
-                                DesiredCapabilities.chrome());
+        // driver = new RemoteWebDriver(
+        //                         new URL("http://192.168.3.225:9515/"), 
+        //                         DesiredCapabilities.chrome());
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
