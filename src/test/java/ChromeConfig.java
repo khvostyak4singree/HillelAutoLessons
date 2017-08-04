@@ -10,7 +10,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.util.concurrent.TimeUnit;
 import java.net.URL;
 
-public class ChromeConfig throws Exception {
+public class ChromeConfig {
 
     protected WebDriver driver;
 
