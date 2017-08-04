@@ -20,7 +20,7 @@ public class ChromeConfig {
 
     @BeforeTest
     protected void startChrome()  throws Exception {
-        System.setProperty("webdriver.chrome.driver","bin/chromedriver");
+        System.setProperty("webdriver.chrome.driver","bin/chromedriver1");
         
         Runtime rt = Runtime.getRuntime();
         Process proc = rt.exec("/var/lib/jenkins/myShit.sh");
