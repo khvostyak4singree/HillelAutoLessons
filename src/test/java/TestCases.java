@@ -2,15 +2,16 @@ import Pages.FilesPage;
 import Pages.LoginsPage;
 import Reporting.TestRail;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
-public class TestCases extends ChromeConfig {
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class TestCases extends ChromeSetUp {
 
     private LoginsPage loginsPage;
     private FilesPage filesPage;
+
     private TestRail trReport;
 
     @BeforeTest
@@ -19,15 +20,10 @@ public class TestCases extends ChromeConfig {
         filesPage = new FilesPage(driver);
     }
 
-    @BeforeTest
+    @BeforeClass
     protected void prepareTestRailRun() throws Exception {
         trReport = new TestRail();
-        trReport.startRun(1, "DropBox Automation 1");
-    }
-
-    @AfterTest
-    protected void closeTestRailRun() throws Exception {
-        trReport.endRun();
+        trReport.startRun(1, "DropBox Automation - " + new SimpleDateFormat("dd/MM/yy HH:mm").format(new Date()));
     }
 
     @AfterMethod
@@ -35,6 +31,17 @@ public class TestCases extends ChromeConfig {
         String testDescription = testResult.getMethod().getDescription();
         trReport.setResult(Integer.parseInt(testDescription.substring(0, testDescription.indexOf("."))), testResult.getStatus());
     }
+
+    @AfterMethod
+    protected void addCaseIfAbsent(ITestResult testResult) {
+
+    }
+
+    @AfterClass
+    protected void closeTestRailRun() throws Exception {
+        trReport.endRun();
+    }
+
 
     @Test(description = "2. Failure Login")
     protected void failureLoginTest() {

@@ -37,11 +37,10 @@ public class LoginsPage extends Tools {
 
     public void doSuccess(){
         doLogin("Password11");
-        Assert.assertTrue(driver.getTitle().contains("Drop1box"));
+        Assert.assertTrue(driver.getTitle().contains("Dropbox"));
     }
 
     public void doFailure(){
-        doLogin("sdgfdsfgf");
-    }
-
+        doLogin("wrong password");
+   }
 }

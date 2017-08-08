@@ -14,8 +14,8 @@ public class FilesPage extends Tools {
         System.out.println("FilesPage elements are initialized");
     }
 
-    private final String PATH_TO_FILE = "C://";
-    private final String FILE_NAME = "BOOTNXT";
+    private final String PATH_TO_FILE = "/home/hillel/";
+    private final String FILE_NAME = "testFile.txt";
 
     @FindBy(css = "input[type='file']")
     private WebElement fileInput;
