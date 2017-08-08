@@ -16,15 +16,13 @@ public class LoginsPage extends Tools {
         System.out.println("LoginPage elements are initialized");
     }
 
-    private String SERVICE_URL = "http://dropbox.com/login";
-    private String USERNAME = "testusermail2017@gmail.com";
+    private final String SERVICE_URL = "http://dropbox.com/login";
+    private final String USERNAME = "testusermail2017@gmail.com";
 
     @FindBy(css = "div>input[name='login_email']")
     private WebElement email_field;
-
     @FindBy(css = "div>input[name='login_password']")
     private WebElement pass_field;
-
     @FindBy(css = "button[type='submit']>div.sign-in-text")
     private WebElement signIn;
 
@@ -39,7 +37,7 @@ public class LoginsPage extends Tools {
 
     public void doSuccess(){
         doLogin("Password11");
-        Assert.assertTrue(driver.getTitle().contains("Dropbox"));
+        Assert.assertTrue(driver.getTitle().contains("Drop1box"));
     }
 
     public void doFailure(){

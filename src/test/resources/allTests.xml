@@ -7,15 +7,4 @@
             <class name="TestCases"/>
         </classes>
     </test>
-    <!--<test name="NegativeTests" >-->
-    <!--<parameter name="input" value="6000,1"/>-->
-    <!--<classes>-->
-    <!--<class name="Tests">-->
-    <!--<methods>-->
-    <!--<exclude name="Positive"/>-->
-    <!--</methods>-->
-    <!--</class>-->
-    <!--</classes>-->
-    <!--</test>-->
-
 </suite>

@@ -1,36 +1,51 @@
 package Pages;
 
 import Utils.Tools;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class FilesPage extends Tools {
 
     public FilesPage(WebDriver driver){
         this.driver = driver;
+        PageFactory.initElements(driver,this);
+        System.out.println("FilesPage elements are initialized");
     }
+
+    private final String PATH_TO_FILE = "C://";
+    private final String FILE_NAME = "BOOTNXT";
+
+    @FindBy(css = "input[type='file']")
+    private WebElement fileInput;
+    @FindBy(xpath = "//tr[@data-filename='"+FILE_NAME+"']")
+    private WebElement testFile;
+    @FindBy(xpath = "//tr[@data-filename='"+FILE_NAME+"']//button[@role='button']")
+    private WebElement filePopup;
+    @FindBy(xpath = "//div//button[@role='menuitem'][contains(text(),'Delete')]")
+    private WebElement deleteButton;
+    @FindBy(css = "button.button-primary")
+    private WebElement confirmDeleting;
 
     public void doUpload(){
-        waitForElementDisplayedXpath("//span[contains(text(),'Upload files')]/ancestor::button");
-        driver.findElement(By.xpath("//span[contains(text(),'Upload files')]/ancestor::button")).click();
-        waitForElementDisplayedCss("button[aria-label='Switch to the basic file uploader']");
-        driver.findElement(By.cssSelector("button[aria-label='Switch to the basic file uploader']")).click();
-        driver.findElement(By.cssSelector("input[type='file'][aria-label='Upload files']")).sendKeys("D:\\tools.txt");
-        waitForElementDisplayedXpath("//span[contains(text(),'tools.txt')]");
+        fileInput.sendKeys(PATH_TO_FILE + FILE_NAME);
+        sleep(3);
+        waitForElementDisplayed(testFile);
+        waitForElementClickable(testFile);
+        driver.navigate().refresh();
     }
 
-    public void doDelete(){
-        driver.get("https://dropbox.com/home");
-        waitForElementDisplayedXpath("//span[contains(text(),'tools.txt')]");
-        waitForElementDisplayedXpath("//button[@role='button'][contains(@class,'browse-overflow')]");
-        driver.findElement(By.xpath("//button[@role='button'][contains(@class,'browse-overflow')]")).click();
-        waitForElementDisplayedXpath("//div//button[@role='menuitem'][contains(text(),'Delete')]");
-        driver.findElement(By.xpath("//div//button[@role='menuitem'][contains(text(),'Delete')]")).click();
-        waitForElementDisplayedCss("button.button-primary");
-        driver.findElement(By.cssSelector("button.button-primary")).click();
-        sleep(5);
-        Assert.assertTrue(driver.findElements(By.xpath("//span[contains(text(),'tools.txt')]")).isEmpty());
+    public void doDelete() {
+        waitForElementDisplayed(testFile);
+        waitForElementClickable(testFile);
+        waitForElementDisplayed(filePopup);
+        filePopup.click();
+        waitForElementDisplayed(deleteButton);
+        waitForElementClickable(deleteButton);
+        deleteButton.click();
+        sleep(2);
+        confirmDeleting.click();
+        sleep(2);
     }
-
 }
