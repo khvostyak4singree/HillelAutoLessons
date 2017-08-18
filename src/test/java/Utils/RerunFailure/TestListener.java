@@ -14,12 +14,12 @@ public class TestListener implements ITestListener {
     }
 
     public void onFinish(ITestContext context) {
-        Set<ITestResult> failedTests = context.getFailedTests().getAllResults();
-
-        for (ITestResult test : failedTests) {
-            if (context.getPassedTests().getResults(test.getMethod()).size() > 0)
-                failedTests.remove(test);
-        }
+//        Set<ITestResult> failedTests = context.getFailedTests().getAllResults();
+//
+//        for (ITestResult test : failedTests) {
+//            if (context.getPassedTests().getResults(test.getMethod()).size() > 0)
+//                failedTests.remove(test);
+//        }
     }
 
     public void onTestStart(ITestResult result) {

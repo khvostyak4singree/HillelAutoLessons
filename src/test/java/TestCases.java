@@ -33,10 +33,6 @@ public class TestCases extends ChromeSetUp {
         trReport.setResult(Integer.parseInt(testDescription.substring(0, testDescription.indexOf("."))), testResult.getStatus());
     }
 
-    @AfterMethod
-    protected void addCaseIfAbsent(ITestResult testResult) {
-
-    }
 
     @AfterClass
     protected void closeTestRailRun() throws Exception {
