@@ -40,7 +40,13 @@ public class LoginsPage extends Tools {
         Assert.assertTrue(driver.getTitle().contains("Dropbox"));
     }
 
+    boolean first = true;
+
     public void doFailure(){
         doLogin("wrong password");
-   }
+//        if (first) {
+//            first = false;
+            Assert.assertTrue(false);
+//        }
+    }
 }

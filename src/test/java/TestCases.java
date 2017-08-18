@@ -1,6 +1,7 @@
 import Pages.FilesPage;
 import Pages.LoginsPage;
 import Reporting.TestRail;
+import Utils.RerunFailure.Retry;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -53,13 +54,13 @@ public class TestCases extends ChromeSetUp {
         loginsPage.doSuccess();
     }
 
-    @Test(description = "3. Upload File", dependsOnMethods = "successLoginTest")
-    protected void uploadTest() {
-        filesPage.doUpload();
-    }
-
-    @Test(description = "4. Delete File", dependsOnMethods = "uploadTest")
-    protected void deleteTest() {
-        filesPage.doDelete();
-    }
+//    @Test(description = "3. Upload File", dependsOnMethods = "successLoginTest")
+//    protected void uploadTest() {
+//        filesPage.doUpload();
+//    }
+//
+//    @Test(description = "4. Delete File", dependsOnMethods = "uploadTest")
+//    protected void deleteTest() {
+//        filesPage.doDelete();
+//    }
 }
